@@ -1,7 +1,8 @@
-import { response } from "express";
+// import { response } from "express";
 import asyncHandler from "express-async-handler";
 import User from "../models/userModel.js";
 import generateToken from "../utils/generateWebTokens.js";
+
 //@desc Auth user and get token
 //@route POST /api/users/login
 //@aceess public
