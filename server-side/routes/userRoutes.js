@@ -4,8 +4,9 @@ import {
   getUserProfile,
   registerUser,
 } from "../controllers/userController.js";
-const router = express.Router();
 import { protect } from "../middleware/authMiddleware.js";
+
+const router = express.Router();
 
 router.post("/login", authUser);
 router.route("/").post(registerUser);

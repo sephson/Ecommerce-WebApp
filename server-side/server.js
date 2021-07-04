@@ -3,8 +3,9 @@ import dotenv from "dotenv";
 import connectDB from "./config/db.js";
 import productRoutes from "./routes/productRoutes.js";
 import userRoutes from "./routes/userRoutes.js";
-import bodyParser from "body-parser";
+// import bodyParser from "body-parser";
 import { notFound, errorHandler } from "./middleware/errorMiddleware.js";
+// import morgan from "morgan";
 
 dotenv.config();
 
@@ -12,8 +13,9 @@ connectDB();
 
 const app = express();
 
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json()); //middleware to accept post from body
+app.use(express.json());
+// app.use(bodyParser.urlencoded({ extended: false }));
+// app.use(bodyParser.json()); //middleware to accept post from body
 app.get("/", (req, res) => {
   res.send("api page");
 });
